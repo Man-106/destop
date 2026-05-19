@@ -1,16 +1,10 @@
-﻿// ============================================================
-//  FILE: FormHelper.cs  -  them vao project
-//  Static helper: tao DataGridView va Button chuan dark theme
-//  Tuong thich: C# 7.3 / .NET Framework 4.7.2
-// ============================================================
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace DU_AN_DESKTOP_CUOI_KY
 {
     internal static class FormHelper
     {
-        // Tao DataGridView dark theme chuan
         internal static DataGridView TaoDGV()
         {
             var dgv = new DataGridView();
@@ -45,7 +39,6 @@ namespace DU_AN_DESKTOP_CUOI_KY
             return dgv;
         }
 
-        // Tao Button dark theme chuan
         internal static Button TaoNut(string text, Color backColor, int x, int y, int w = 110, int h = 33)
         {
             var btn = new Button
@@ -64,7 +57,6 @@ namespace DU_AN_DESKTOP_CUOI_KY
             return btn;
         }
 
-        // Tao TextBox dark theme (khong dung PlaceholderText vi .NET 4.7.2)
         internal static TextBox TaoTxt(string placeholder, int x, int y, int w, int h = 28)
         {
             var txt = new TextBox
@@ -90,21 +82,18 @@ namespace DU_AN_DESKTOP_CUOI_KY
             return txt;
         }
 
-        // Lay tu khoa tu TextBox (bo qua neu dang hien placeholder)
         internal static string LayTK(TextBox txt)
         {
             if (txt.ForeColor == Color.FromArgb(100, 120, 160)) return "";
             return txt.Text.Trim();
         }
 
-        // Reset TextBox ve placeholder
         internal static void ResetTxt(TextBox txt, string placeholder)
         {
             txt.Text = placeholder;
             txt.ForeColor = Color.FromArgb(100, 120, 160);
         }
 
-        // Tao Label tieu de section
         internal static Label TaoLabelTitle(string text, Color foreColor)
         {
             return new Label

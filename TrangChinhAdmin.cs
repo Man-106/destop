@@ -1,11 +1,4 @@
-// ============================================================
-//  FILE: TrangChinhAdmin.cs
-//  Dashboard Admin day du chuc nang:
-//    - 4 the thong ke tu database (SQL khong dau)
-//    - 5 nut mo form quan ly thuc su
-//    - Dang xuat, lam moi
-//  Tuong thich: C# 7.3 / .NET 4.7.2
-// ============================================================
+
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -22,33 +15,32 @@ namespace DU_AN_DESKTOP_CUOI_KY
             TaiThongKe();
         }
 
-        // ════════════════════════════════════════════════════════════════
-        //  THONG KE DASHBOARD  (dung SQL khong dau)
-        // ════════════════════════════════════════════════════════════════
+      
         private void TaiThongKe()
         {
             try
             {
-                // Sử dụng dấu $"" để ghép tên nút và số đếm trong ngoặc đơn ( )
-                btnQuanLySinhVienAdmin.Text = $"Quản lý sinh viên ({LaySo("SELECT COUNT(1) FROM SinhVien WHERE TrangThai=1")})";
-                btnQuanLyPhongAdmin.Text = $"Quản lý phòng ({LaySo("SELECT COUNT(1) FROM Phong WHERE TrangThai=N'Con cho'")})";
+            
+                btnQuanLySinhVienAdmin.Text = $"👥 Quản lý sinh viên ({LaySo("SELECT COUNT(1) FROM SinhVien WHERE TrangThai=1")})";
 
-                // Bạn có thể áp dụng tương tự cho các nút còn lại:
-                btnQuanLyHopDongAdmin.Text = $"Quản lý hợp đồng ({LaySo("SELECT COUNT(1) FROM HopDong WHERE TrangThai=N'Dang hieu luc'")})";
-                btnQuanLyHoaDonAdmin.Text = $"Quản lý hóa đơn ({LaySo("SELECT COUNT(1) FROM HoaDon WHERE TrangThai=N'Chua thanh toan'")})";
-                btnQuanLyViPhamAdmin.Text = $"Quản lý vi phạm ({LaySo("SELECT COUNT(1) FROM ViPham WHERE TrangThai=N'Chua xu ly'")})";
+                btnQuanLyPhongAdmin.Text = $"🏠 Quản lý phòng ({LaySo("SELECT COUNT(1) FROM Phong WHERE TrangThai=N'Con cho'")})";
+
+                btnQuanLyHopDongAdmin.Text = $"📄 Quản lý hợp đồng ({LaySo("SELECT COUNT(1) FROM HopDong WHERE TrangThai=N'Dang hieu luc'")})";
+
+                btnQuanLyHoaDonAdmin.Text = $"💰 Quản lý hóa đơn ({LaySo("SELECT COUNT(1) FROM HoaDon WHERE TrangThai=N'Chua thanh toan'")})";
+
+                btnQuanLyViPhamAdmin.Text = $"⚠️ Quản lý vi phạm ({LaySo("SELECT COUNT(1) FROM ViPham WHERE TrangThai=N'Chua xu ly'")})";
             }
-            catch
+            catch (Exception ex)
             {
-                // Nếu lỗi DB, hiển thị số (0) tạm thời để giao diện không bị lỗi chữ
-                btnQuanLySinhVienAdmin.Text = "Quản lý sinh viên (0)";
-                btnQuanLyPhongAdmin.Text = "Quản lý phòng (0)";
-                btnQuanLyHopDongAdmin.Text = "Quản lý hợp đồng (0)";
-                btnQuanLyHoaDonAdmin.Text = "Quản lý hóa đơn (0)";
-                btnQuanLyViPhamAdmin.Text = "Quản lý vi phạm (0)";
+             
+                btnQuanLySinhVienAdmin.Text = "Quản lý sinh viên";
+                btnQuanLyPhongAdmin.Text = "Quản lý phòng";
+                btnQuanLyHopDongAdmin.Text = "Quản lý hợp đồng";
+                btnQuanLyHoaDonAdmin.Text = "Quản lý hóa đơn";
+                btnQuanLyViPhamAdmin.Text = "Quản lý vi phạm";
             }
         }
-
         private int LaySo(string sql)
         {
             object v = DatabaseHelper.ExecuteScalar(sql);
@@ -64,9 +56,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
             TaiThongKe();
         }
 
-        // ════════════════════════════════════════════════════════════════
-        //  MO FORM CHUC NANG  —  sau khi dong thi lam moi dashboard
-        // ════════════════════════════════════════════════════════════════
+      
         private void btnQuanLySinhVien_Click(object sender, EventArgs e)
         {
             MoForm(new FormQuanLySinhVienAdmin());
@@ -92,16 +82,14 @@ namespace DU_AN_DESKTOP_CUOI_KY
             MoForm(new FormQuanLyViPhamAdmin());
         }
 
-        // Mo form dang Show (khong Show Dialog) va lam moi khi dong
+
         private void MoForm(Form form)
         {
             form.FormClosed += (s, e) => TaiThongKe();
             form.Show();
         }
 
-        // ════════════════════════════════════════════════════════════════
-        //  DANG XUAT
-        // ════════════════════════════════════════════════════════════════
+      
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Ban co chac muon dang xuat?", "Xac nhan",

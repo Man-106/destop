@@ -22,56 +22,54 @@ namespace DU_AN_DESKTOP_CUOI_KY
             this.lblChaoMung = new System.Windows.Forms.Label();
             this.SuspendLayout();
 
-            // lblChaoMung
             this.lblChaoMung.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblChaoMung.Location = new System.Drawing.Point(20, 15);
             this.lblChaoMung.Size = new System.Drawing.Size(760, 35);
             this.lblChaoMung.Text = "🏠 Hệ thống Quản lý Ký túc xá";
             this.lblChaoMung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-            // btnQuanLySinhVien
+
             this.btnQuanLySinhVienAdmin.Location = new System.Drawing.Point(30, 80);
             this.btnQuanLySinhVienAdmin.Size = new System.Drawing.Size(200, 60);
             this.btnQuanLySinhVienAdmin.Text = "👤 Quản lý Sinh viên";
             this.btnQuanLySinhVienAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQuanLySinhVienAdmin.Click += new System.EventHandler(this.btnQuanLySinhVien_Click);
 
-            // btnQuanLyPhong
+     
             this.btnQuanLyPhongAdmin.Location = new System.Drawing.Point(260, 80);
             this.btnQuanLyPhongAdmin.Size = new System.Drawing.Size(200, 60);
             this.btnQuanLyPhongAdmin.Text = "🚪 Quản lý Phòng";
             this.btnQuanLyPhongAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQuanLyPhongAdmin.Click += new System.EventHandler(this.btnQuanLyPhong_Click);
 
-            // btnQuanLyHopDong
+          
             this.btnQuanLyHopDongAdmin.Location = new System.Drawing.Point(490, 80);
             this.btnQuanLyHopDongAdmin.Size = new System.Drawing.Size(200, 60);
             this.btnQuanLyHopDongAdmin.Text = "📄 Quản lý Hợp đồng";
             this.btnQuanLyHopDongAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQuanLyHopDongAdmin.Click += new System.EventHandler(this.btnQuanLyHopDong_Click);
 
-            // btnQuanLyHoaDon
+         
             this.btnQuanLyHoaDonAdmin.Location = new System.Drawing.Point(30, 170);
             this.btnQuanLyHoaDonAdmin.Size = new System.Drawing.Size(200, 60);
             this.btnQuanLyHoaDonAdmin.Text = "💰 Quản lý Hóa đơn";
             this.btnQuanLyHoaDonAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQuanLyHoaDonAdmin.Click += new System.EventHandler(this.btnQuanLyHoaDon_Click);
 
-            // btnQuanLyViPham
+          
             this.btnQuanLyViPhamAdmin.Location = new System.Drawing.Point(260, 170);
             this.btnQuanLyViPhamAdmin.Size = new System.Drawing.Size(200, 60);
             this.btnQuanLyViPhamAdmin.Text = "⚠️ Quản lý Vi phạm";
             this.btnQuanLyViPhamAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnQuanLyViPhamAdmin.Click += new System.EventHandler(this.btnQuanLyViPham_Click);
 
-            // btnDangXuat
+
             this.btnDangXuat.Location = new System.Drawing.Point(620, 390);
             this.btnDangXuat.Size = new System.Drawing.Size(150, 40);
             this.btnDangXuat.Text = "🚪 Đăng xuất";
             this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
 
-            // Form
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

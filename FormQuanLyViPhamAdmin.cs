@@ -1,8 +1,4 @@
-﻿// ============================================================
-//  FILE: FormQuanLyViPham.cs
-//  Tuong thich: C# 7.3 / .NET Framework 4.7.2
-// ============================================================
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -130,7 +126,6 @@ namespace DU_AN_DESKTOP_CUOI_KY
             string tt = dgv.CurrentRow.Cells["Trang Thai"].Value?.ToString();
             if (tt == "Da nop phat") { Warn("Vi pham nay da xu ly xong!"); return; }
 
-            // Dialog chon trang thai xu ly
             var frm = new Form
             {
                 Text = "Xu ly vi pham " + ma,
@@ -229,9 +224,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
             MessageBox.Show(m, "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
-    // ════════════════════════════════════════════════════════
-    //  FORM THEM VI PHAM
-    // ════════════════════════════════════════════════════════
+   
     public class FormChiTietViPham : Form
     {
         private TextBox txtMaVP, txtMaSV, txtMoTa, txtMucPhat;

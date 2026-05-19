@@ -1,8 +1,4 @@
-﻿// ============================================================
-//  FILE: FormQuanLySinhVien.cs
-//  Tuong thich: C# 7.3 / .NET Framework 4.7.2
-// ============================================================
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -164,9 +160,6 @@ namespace DU_AN_DESKTOP_CUOI_KY
             MessageBox.Show(m, "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
-    // ════════════════════════════════════════════════════════
-    //  FORM THEM / SUA SINH VIEN
-    // ════════════════════════════════════════════════════════
     public class FormChiTietSinhVien : Form
     {
         private readonly string _ma;
@@ -204,7 +197,6 @@ namespace DU_AN_DESKTOP_CUOI_KY
             };
             this.Controls.Add(title);
 
-            // Helper tao label
             Action<string, int> LB = (t, top) => this.Controls.Add(new Label
             {
                 Text = t,
@@ -214,7 +206,6 @@ namespace DU_AN_DESKTOP_CUOI_KY
                 AutoSize = true
             });
 
-            // Helper tao textbox
             Func<int, TextBox> TB = (top) =>
             {
                 var t = new TextBox
@@ -325,7 +316,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
 
             try
             {
-                if (_ma == null) // THEM MOI
+                if (_ma == null) 
                 {
                     string mk = txtMK?.Text ?? "";
                     if (mk.Length < 6) { Warn("Mat khau phai >= 6 ky tu!"); return; }
@@ -343,7 +334,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
                             new SqlParameter("@lp",lop), new SqlParameter("@kh",khoa), new SqlParameter("@mk",mk) });
                     MessageBox.Show("Them sinh vien thanh cong!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else // SUA
+                else 
                 {
                     DatabaseHelper.ExecuteNonQuery(@"UPDATE SinhVien SET HoTen=@ht,GioiTinh=@gt,NgaySinh=@ns,CCCD=@cc,SoDienThoai=@sdt,Email=@em,DiaChi=@dc,Lop=@lp,Khoa=@kh WHERE MaSV=@ma",
                         new SqlParameter[] { new SqlParameter("@ht",hoTen), new SqlParameter("@gt",cboGT.Text),

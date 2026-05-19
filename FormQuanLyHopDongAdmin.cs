@@ -1,8 +1,4 @@
-﻿// ============================================================
-//  FILE: FormQuanLyHopDong.cs
-//  Tuong thich: C# 7.3 / .NET Framework 4.7.2
-// ============================================================
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -152,9 +148,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
         private void Warn(string m) => MessageBox.Show(m, "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
-    // ════════════════════════════════════════════════════════
-    //  FORM TAO HOP DONG
-    // ════════════════════════════════════════════════════════
+ 
     public class FormTaoHopDongAdmin : Form
     {
         private TextBox txtMaHD, txtMaSV, txtTienCoc, txtGhiChu;

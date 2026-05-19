@@ -1,8 +1,4 @@
-﻿// ============================================================
-//  FILE: FormQuanLyPhong.cs
-//  Tuong thich: C# 7.3 / .NET Framework 4.7.2
-// ============================================================
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -143,9 +139,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
             MessageBox.Show(m, "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
-    // ════════════════════════════════════════════════════════
-    //  FORM CHI TIET PHONG
-    // ════════════════════════════════════════════════════════
+    
     public class FormChiTietPhong : Form
     {
         private readonly string _ma;
@@ -241,9 +235,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
         private void Warn(string m) => MessageBox.Show(m, "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
-    // ════════════════════════════════════════════════════════
-    //  FORM SINH VIEN TRONG PHONG
-    // ════════════════════════════════════════════════════════
+   
     public class FormSinhVienPhong : Form
     {
         public FormSinhVienPhong(string maPhong, string tenPhong)

@@ -1,9 +1,4 @@
-// ============================================================
-//  FILE: TrangChinhSinhVien.cs
-//  Tuong thich voi TrangChinhSinhVien_Designer.cs goc
-//  (sidebar layout, 6 nut chuc nang)
-//  Tuong thich: C# 7.3 / .NET 4.7.2
-// ============================================================
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -44,7 +39,7 @@ namespace DU_AN_DESKTOP_CUOI_KY
             btn.MouseLeave += (s, e) => btn.BackColor = normal;
         }
 
-        // Mo form con kieu ShowDialog de nguoi dung quay lai trang chinh
+
         private void MoForm(Form formCon)
         {
             formCon.ShowDialog(this);
